@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Alura Typer</title>
 </head>
+
 <body>
-    <h1>Alura Typer</h1>
-    <p class="frase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rem fugit consectetur fugiat velit eaque laborum ipsa, non voluptatem voluptas aperiam quasi at! A delectus nesciunt quos error, dolorum inventore!</p>
 
-    <ul class="informacoes">
-        <li><span class="tamanhoFrase"></span> palavras</li>
-        <li><span class="contagemTempo">10</span> segundos</li>
-    </ul>
+    <div class="container">
+        <h1 class="center">Alura Typer</h1>
+        <p class="frase center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rem fugit consectetur fugiat
+            velit eaque laborum ipsa, non voluptatem voluptas aperiam quasi at! A delectus nesciunt quos error, dolorum
+            inventore!</p>
 
-    <textarea class="campoDigitacao" cols="60" rows="5">hkk</textarea>
+        <ul class="informacoes center">
+            <li>
+                <i class="small material-icons icones">description</i>
+                <span class="tamanhoFrase"></span> palavras
+            </li>
+            <li>
+                <i class="small material-icons icones">query_builder</i>
+                <span class="tempoDigitacao">5</span> segundos
+            </li>
+        </ul>
 
-    <ul>
-        <li><span id="contadorCaracteres">0</span> caracteres</li>
-        <li><span id="contadorPalavras">0</span> palavras</li>
-    </ul>
+        <textarea class="campoDigitacao" cols="60" rows="5"></textarea>
+        <a class="btn-floating btn-large waves-effect waves-light red" id="botaoReiniciar"><i class="material-icons">restore</i></a>
+
+        <ul class="center">
+            <li><span id="contadorCaracteres">0</span> caracteres</li>
+            <li><span id="contadorPalavras">0</span> palavras</li>
+        </ul>
+    </div>
 
     <script src='js/jquery.js'></script>
     <script src='js/main.js'></script>
 
 </body>
+
 </html>
