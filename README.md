@@ -53,11 +53,23 @@ campo.focus(function() {...})
 <br>
 
 * `addClass` e `removeClass` - Adiciona e remove classes nos elementos.
-Tem também o `toggleClass` que faz um "liga/desliga" da class, adiciona e remove a cada click.
+Tem também o `toggleClass` que faz um "liga/desliga" da class, adiciona e remove a cada execução.
 ```js
 element.addClass('classe')
 element.removeClass('classe')
-element.toggleClass('classe') // a cada click, adiciona e remove a classe
+element.toggleClass('classe') // a cada execução, adiciona e remove a classe
 ```
 
 <br>
+
+* `substr()` - Recebe 2 parametros para contagem de caracteres da String monitorada
+sendo o primeiro parametro o index do caractere inicial, e o segundo parametro do index final da String.
+```js
+let string = paralelepipedo;
+
+let resultado1 = string.substr(0, 6)
+let resultado2 = string.substr(2, 8)
+
+console.log(resultado1) // parale
+console.log(resultado2) // ralelepi
+```

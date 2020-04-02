@@ -4,7 +4,8 @@ var tempoInicial = $('.tempoDigitacao').text();
 $(() => {
    atualizaTamanhoFrase()
    inicializaContadores();
-   reiniciaJogo()
+   verificaErro();
+   reiniciaJogo();
 })
 
 function atualizaTamanhoFrase() {
@@ -24,6 +25,22 @@ function inicializaContadores() {
 
       var qtdCaracteres = conteudo.length;
       $("#contadorCaracteres").text(qtdCaracteres);
+   });
+}
+
+function verificaErro() {
+   campo.on('input', () => {
+      var frase = $('.frase').text();
+      var digitacao = campo.val()
+
+      var fraseQuebrada = frase.substr(0, digitacao.length)
+      if (digitacao == fraseQuebrada) {
+         campo.addClass('bordaVerde')
+         campo.removeClass('bordaVermelha')
+      } else {
+         campo.addClass('bordaVermelha')
+         campo.removeClass('bordaVerde')
+      }
    });
 }
 
@@ -59,6 +76,8 @@ function reiniciaJogo() {
    campo.removeClass('campoDesativado');
 
    $('.tempoDigitacao').text(tempoInicial)
+   campo.removeClass('bordaVermelha')
+   campo.removeClass('bordaVerde')
    inicializaCronometro()
 }
 
