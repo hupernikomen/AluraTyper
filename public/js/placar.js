@@ -1,4 +1,3 @@
-
 function inserePlacar() {
    var corpoTabela = $('.placar').find('tbody');
    var usuario = 'Wilson';
@@ -9,7 +8,6 @@ function inserePlacar() {
 
    corpoTabela.prepend(linha);
 }
-
 
 function novaLinha(usuario, palavras) {
    var linha = $('<tr>');
@@ -27,10 +25,9 @@ function novaLinha(usuario, palavras) {
    linha.append(colunaRemover);
 
    return linha;
-
 }
 
-function removeLinha() {
+function removeLinha(event) {
       event.preventDefault();
       $(this).parent().parent().remove();
 }

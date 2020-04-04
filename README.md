@@ -99,4 +99,19 @@ var largura = $('div').css('width')
 console.log(largura) // 300
 ```
 
+<br>
 
+11. `.find()`  
+find significa "encontrar", e é exatamente o que ele faz .. Em uma arvore de uma tabela onde temos `table thead tbody tr td` podemos, em um elemento `tbody`, encontrar uma `td`.
+```js
+var tr = $('tbody').find('tr');
+```
+
+<br>
+
+12. `.parent()`  
+Retorna o elemento PAI do elemento em questão. No exemplo anterior buscamos dentro de `tbody` a TAG `tr` utilizando o `.find()`, Com o parent fazemos o caminho inverso, subimos de nivel
+```js
+var tbody = tr.parent();
+``` 
+Na arvore de uma tabela, quem é o pai de uma `tr` ? O `tbody`.. Então o retorno de nosso exemplo será justamente a `tbody`.
