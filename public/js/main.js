@@ -28,13 +28,15 @@ function inicializaContadores() {
    });
 }
 
+
+
 function verificaErro() {
    campo.on('input', () => {
       var frase = $('.frase').text();
-      var digitacao = campo.val()
+      var digitado = campo.val()
 
-      var fraseQuebrada = frase.substr(0, digitacao.length)
-      if (digitacao == fraseQuebrada) {
+      var comparavel = frase.substr(0, digitado.length)
+      if (digitado == comparavel) {
          campo.addClass('bordaVerde')
          campo.removeClass('bordaVermelha')
       } else {
@@ -43,6 +45,12 @@ function verificaErro() {
       }
    });
 }
+// Pdendo tambem ser assim, usando o 'startsWidth' em ECMASCRIPT 6
+// if (frase.startsWith(digitado)) {
+//    campo.addClass("borda-verde");
+// } else {
+//    campo.addClass("borda-vermelha");
+// }
 
 
 
@@ -56,14 +64,21 @@ function inicializaCronometro() {
          tempoRestante--;
 
          $('.tempoDigitacao').text(tempoRestante);
+
          if (tempoRestante < 1) {
             clearInterval(cronometroID);
-            campo.attr('disabled', true);
             botaoReinicializa.attr('disabled', false)
-            campo.addClass('campoDesativado');
+            finalizaJogo()
          }
       }, 1000);
    })
+}
+
+
+function finalizaJogo() {
+   campo.attr('disabled', true);
+   campo.addClass('campoDesativado');
+   inserePlacar();
 }
 
 
