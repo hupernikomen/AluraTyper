@@ -115,3 +115,11 @@ Retorna o elemento PAI do elemento em questão. No exemplo anterior buscamos den
 var tbody = tr.parent();
 ``` 
 Na arvore de uma tabela, quem é o pai de uma `tr` ? O `tbody`.. Então o retorno de nosso exemplo será justamente a `tbody`.
+
+<br>
+
+13. `$('<tr>')`  
+Em javascript para criarmos um novo elemento (ex: tr) utilizamos o `document.createElement('tr')`. em jQuery basta colocar a TAG que queremos criar dentro do `$()`
+```js
+var novaLinha = $('<tr>');
+```
